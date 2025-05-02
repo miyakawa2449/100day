@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #chat-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+        #chat-box div {
+            margin: 5px 0;
+        }
+        .user {
+            text-align: right;
+            color: blue;
+        }
+        .bot {
+            text-align: left;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="メッセージを入力..." style="width: 80%;">
+    <button onclick="sendMessage()">送信</button>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            if (!userInput) return;
+
+            // ユーザーのメッセージを表示
+            const chatBox = document.getElementById("chat-box");
+            const userMessage = document.createElement("div");
+            userMessage.className = "user";
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+
+            // サーバーにメッセージを送信
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ message: userInput })
+            });
+
+            const data = await response.json();
+
+            // ボットの応答を表示
+            const botMessage = document.createElement("div");
+            botMessage.className = "bot";
+            botMessage.textContent = data.response || "エラーが発生しました。";
+            chatBox.appendChild(botMessage);
+
+            // 入力欄をクリア
+            document.getElementById("user-input").value = "";
+
+            // チャットボックスをスクロール
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
