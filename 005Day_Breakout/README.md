@@ -13,14 +13,6 @@ Python と Pygame を使用して作成したシンプルなブロック崩し�
 - Python 3.8 以上
 - Pygame ライブラリ
 
-## インストール
-
-1. このリポジトリをクローンします。
-
-   ```bash
-   git clone https://github.com/your-repository/block-breaker.git
-   cd block-breaker
-   ```
 
 ## プロジェクト構成
 
