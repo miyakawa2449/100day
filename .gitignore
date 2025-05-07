@@ -23,3 +23,7 @@ Thumbs.db
 
 # 一時ファイル
 *.tmp
+
+# モデルファイル (機械学習や深層学習のモデル)
+# 例: dlibの顔ランドマークモデル
+shape_predictor_68_face_landmarks.dat
