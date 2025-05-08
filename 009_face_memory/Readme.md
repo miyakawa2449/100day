@@ -36,7 +36,8 @@
 
 3. `shape_predictor_68_face_landmarks.dat` モデルファイルをダウンロードします。
 
-   - dlib モデルファイルのダウンロードリンク
+   - dlib モデルファイルのダウンロード
+     -　[shape_predictor_68_face_landmarks.dat.bz2](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) 
    - ダウンロード後、解凍してプロジェクトフォルダに配置してください。
 
 4. データベースを初期化します。
