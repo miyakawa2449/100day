@@ -47,10 +47,8 @@
 
 1.  **スクリプトをダウンロード:**
     ```bash
-    git clone [https://github.com/miyakawa2449/100day.git/tree/main/015_Stable_diffusion](https://github.com/miyakawa2449/100day.git/tree/main/015_Stable_diffusion)
-    cd 100day/015_stable_diffusion 
+    [https://github.com/miyakawa2449/100day/tree/main/015_stable_diffusion](https://github.com/miyakawa2449/100day/tree/main/015_stable_diffusion)
     ```
-    (上記は例です。あなたのリポジトリ構成に合わせてパスを調整してください。スクリプトファイル名は `streamlit_app.py` や `app.py` などになっていると想定しています。)
 
 2.  **Python仮想環境の作成と有効化 (強く推奨):**
     プロジェクトディレクトリのルートで以下のコマンドを実行します。
