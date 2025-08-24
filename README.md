@@ -94,6 +94,28 @@ python main.py  # または各プロジェクト固有のファイル名
 3. **コンピュータビジョンの探求**（Day 7-11）: 顔認識技術の段階的な実装
 4. **最新AI技術の応用**（Day 12-15）: 画像生成AIの実践的活用
 
+## 🔗 100日チャレンジ関連プロジェクト
+
+この前半戦（Day 001-015）の後、さらなる学習を続けました：
+
+### 中期（Day 016-056）
+| プロジェクト | 説明 | 主要技術 |
+|-------------|------|---------|
+| [mini-blog](https://github.com/miyakawa2449/mini-blog) | ミニマルなブログシステムの構築 | Web開発, データベース |
+| [AudioOpt](https://github.com/miyakawa2449/AudioOpt) | 音声処理の最適化システム | 音声処理, Python |
+| [Python_Audio_dataset](https://github.com/miyakawa2449/Python_Audio_dataset) | 音声データセット処理ツール | データ処理, 音声解析 |
+| [Audio-Pipeline-Integrated](https://github.com/miyakawa2449/Audio-Pipeline-Integrated) | 統合音声処理パイプライン | システム統合, 音声処理 |
+
+### 後期（Day 057-100）
+| プロジェクト | 説明 | 主要技術 |
+|-------------|------|---------|
+| [daily-python-projects](https://github.com/miyakawa2449/daily-python-projects) | 日々のPythonプロジェクト集（57-100日目） | 総合的なPython開発 |
+
+### 学習の進化
+- **前半（001-015）**: 基礎技術の習得とプロトタイピング
+- **中期（016-056）**: 実用的なWebアプリケーションと音声処理への特化
+- **後期（057-100）**: より洗練されたプロジェクト設計と総合力の向上
+
 ## 🔍 特記事項
 
 - 初めてのプロジェクトのため、コードの品質にばらつきがあります
