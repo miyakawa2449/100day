@@ -1,0 +1,53 @@
+# 100日コーディングチャレンジ - 依存関係ファイル
+# このファイルには、全15プロジェクトで使用されているPythonライブラリが含まれています
+
+# ゲーム開発・GUI関連
+pygame>=2.0.0  # Day 001, 002, 005: オセロ、数当てゲーム、ブロック崩し
+PySide6>=6.0.0  # Day 002: 数当てゲームGUI
+streamlit>=1.20.0  # Day 003, 015: LLMチャットボット、画像スタイル変換アプリ
+flask>=2.0.0  # Day 003, 004: Webアプリケーション
+
+# コンピュータビジョン・画像処理
+opencv-python>=4.5.0  # Day 007-011: 顔認識プロジェクト
+dlib>=19.22.0  # Day 008-011: 顔ランドマーク検出
+Pillow>=9.0.0  # Day 012-015: 画像処理・生成
+
+# AI・機械学習
+torch>=2.0.0  # Day 003: Llama3モデル用
+transformers>=4.30.0  # Day 003: Hugging Face Transformers
+accelerate>=0.20.0  # Day 003: モデル高速化
+sentencepiece>=0.1.99  # Day 003: トークナイザー
+
+# 外部API関連
+stability-sdk>=0.8.0  # Day 012: Stability AI SDK
+openai>=1.0.0  # Day 013: OpenAI API（翻訳用）
+
+# データ分析・科学計算
+numpy>=1.21.0  # Day 007-011: 数値計算
+matplotlib>=3.5.0  # Day 008-010: データ可視化
+
+# ユーティリティ
+requests>=2.28.0  # Day 013-015: HTTP通信
+python-dotenv>=0.19.0  # Day 012, 013: 環境変数管理
+
+# その他
+pytz>=2023.3  # Day 002: タイムゾーン処理
+
+# 注意事項:
+# 1. dlib のインストールには C++ コンパイラが必要です
+# 2. torch は GPU版をインストールする場合は公式サイトの手順に従ってください
+# 3. 一部のプロジェクトでは追加の設定ファイルが必要です:
+#    - Day 008-011: shape_predictor_68_face_landmarks.dat (dlib公式サイトから)
+#    - Day 012-015: .env ファイルにAPIキーを設定
+
+# オプション: JSON Schema検証（一部のプロジェクトで使用される可能性）
+jsonschema>=4.0.0
+
+# インストール方法:
+# pip install -r requirements.txt
+
+# 特定のプロジェクトのみ実行する場合の最小要件:
+# - ゲーム開発 (Day 1,2,5,6): pygame, PySide6, pytz
+# - 顔認識 (Day 7-11): opencv-python, dlib, numpy, matplotlib
+# - LLM (Day 3-4): torch, transformers, accelerate, sentencepiece, flask, streamlit
+# - 画像生成 (Day 12-15): Pillow, requests, python-dotenv, stability-sdk, openai, streamlit
