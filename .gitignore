@@ -27,3 +27,12 @@ Thumbs.db
 # モデルファイル (機械学習や深層学習のモデル)
 # 例: dlibの顔ランドマークモデル
 shape_predictor_68_face_landmarks.dat
+
+# ポートフォリオ用ファイル（SEO対策のため別管理）
+portfolio.md
+*/portfolio.md
+
+# ポートフォリオ用ファイル・画像（別途管理）
+*/images/
+# GitHub用のスクリーンショットは含めない
+!*/docs/
