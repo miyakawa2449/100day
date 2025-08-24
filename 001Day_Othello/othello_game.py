@@ -132,17 +132,26 @@ class OthelloGame:
         self.font = pygame.font.SysFont("sansserif", 30)
         self.small_font = pygame.font.SysFont("sansserif", 20)
         pygame.font.init() # フォントモジュールを初期化 (念のため)
-        # 日本語対応フォントを指定
-        font_name = "Noto Serif CJK JP" # ここをシステムで見つかったフォント名に置き換える
-        try:
-            self.font = pygame.font.SysFont(font_name, 20)
-            self.small_font = pygame.font.SysFont(font_name, 10)
-            print(f"フォント '{font_name}' をロードしました。") # 確認用
-        except Exception as e:
-             print(f"警告: フォント '{font_name}' のロードに失敗しました。デフォルトフォントを使用します。エラー: {e}")
-             # フォールバックとしてデフォルトを使う (文字化けする可能性あり)
-             self.font = pygame.font.Font(None, 20)
-             self.small_font = pygame.font.Font(None, 10)
+        # 日本語対応フォントを指定（macOS用）
+        font_candidates = ["hiraginosansgb", "applesdgothicneo", "arialunicode", "helveticaneue"]
+        font_loaded = False
+        
+        for font_name in font_candidates:
+            try:
+                self.font = pygame.font.SysFont(font_name, 20)
+                self.small_font = pygame.font.SysFont(font_name, 16)
+                print(f"フォント '{font_name}' をロードしました。") # 確認用
+                font_loaded = True
+                break
+            except Exception as e:
+                print(f"フォント '{font_name}' のロードに失敗: {e}")
+                continue
+        
+        if not font_loaded:
+            print("警告: 日本語対応フォントのロードに失敗しました。デフォルトフォントを使用します。")
+            # フォールバックとしてデフォルトを使う
+            self.font = pygame.font.Font(None, 20)
+            self.small_font = pygame.font.Font(None, 16)
 
     def switch_player(self):
         """プレイヤーを交代する"""
@@ -244,6 +253,14 @@ class OthelloGame:
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     self.handle_click(event.pos)
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_F12:
+                        # F12キーでスクリーンショット保存
+                        import datetime
+                        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                        filename = f"docs/screenshot_{timestamp}.png"
+                        pygame.image.save(self.screen, filename)
+                        print(f"スクリーンショットを保存しました: {filename}")
 
             # 描画処理
             self.board.draw_squares(self.screen)
